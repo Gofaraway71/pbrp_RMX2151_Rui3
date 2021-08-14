@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX2001
-PRODUCT_NAME := twrp_RMX2001
+PRODUCT_NAME := omni_RMX2001
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2001
 PRODUCT_MANUFACTURER := realme
