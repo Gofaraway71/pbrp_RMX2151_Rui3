@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_RMX2001.mk
+    $(LOCAL_DIR)/omni_RMX2001.mk.mk
 
-COMMON_LUNCH_CHOICES := twrp_RMX2001-eng
+COMMON_LUNCH_CHOICES := omni_RMX2001.mk-eng
