@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2019 Potato Open Sauce Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Inherit from our PitchBlack configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
 
@@ -35,7 +34,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEVICE := RMX2001
 PRODUCT_NAME := omni_RMX2001
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := RMX2001
+PRODUCT_MODEL := realme 6
 PRODUCT_MANUFACTURER := realme
 
 # HACK: Set vendor patch level
