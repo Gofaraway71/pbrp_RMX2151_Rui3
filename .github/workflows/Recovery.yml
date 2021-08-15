@@ -50,3 +50,21 @@ jobs:
               sudo apt-get update && sudo apt-get install sshpass -y
               cd $BuildPath 
               bash vendor/utils/pb_deploy.sh ${BUILD_RELEASE_TYPE} ${VENDOR} ${CODENAME}
+              
+              
+       - uses: actions/upload-artifact@v2
+         with:
+              name: recoveryzip
+              path: work/out/target/product/*/*.zip
+
+       - uses: actions/upload-artifact@v2
+         with:
+              name: recoveryimage
+              path: work/out/target/product/*/*.img
+          
+       - name: Upload recovery image
+         run: |
+              cd work/out/target/product/$DEVICE
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wet *.img
+              ./transfer wet *.zip
