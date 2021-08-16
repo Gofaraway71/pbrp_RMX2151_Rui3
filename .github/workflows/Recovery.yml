@@ -55,12 +55,12 @@ jobs:
        - uses: actions/upload-artifact@v2
          with:
               name: recoveryzip
-              path: $BuildPath/out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.zip
+              path: $BuildPath/out/target/product/${CODENAME}/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
               name: recoveryimage
-              path: $BuildPath/out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.img
+              path: $BuildPath/out/target/product/${CODENAME}/*.img
           
        - name: Upload recovery image
          run: |
