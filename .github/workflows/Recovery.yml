@@ -55,16 +55,16 @@ jobs:
        - uses: actions/upload-artifact@v2
          with:
               name: recoveryzip
-              path: work/out/target/product/*/*.zip
+              path: $BuildPath/out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.zip
 
        - uses: actions/upload-artifact@v2
          with:
               name: recoveryimage
-              path: work/out/target/product/*/*.img
+              path: $BuildPath/out/target/product/${CODENAME}/PBRP*-UNOFFICIAL.img
           
        - name: Upload recovery image
          run: |
-              cd work/out/target/product/$DEVICE
+              cd $BuildPath/out/target/product/${CODENAME}
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet *.img
               ./transfer wet *.zip
