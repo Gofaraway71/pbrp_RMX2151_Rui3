@@ -6,14 +6,14 @@ echo $prjName
 
 case $prjName in
     "20682")
-        resetprop "ro.product.model" "Realme 7/ Narzo 20 Pro "
-        resetprop "ro.build.product" "RMX2151"
-        resetprop "ro.product.device" "RMX2151"
+        setprop "ro.product.model" "Realme 7/ Narzo 20 Pro "
+        setprop "ro.build.product" "RMX2151"
+        setprop "ro.product.device" "RMX2151"
         ;;
     *)
-        resetprop "ro.product.model" "Realme 6"
-        resetprop "ro.build.product" "RMX2001"
-        resetprop "ro.product.device" "RMX2001"
+        setprop "ro.product.model" "Realme 6"
+        setprop "ro.build.product" "RMX2001"
+        setprop "ro.product.device" "RMX2001"
         ;;
 esac
 
