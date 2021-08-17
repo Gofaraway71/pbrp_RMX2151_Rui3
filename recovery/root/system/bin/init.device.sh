@@ -1,7 +1,7 @@
 #!/sbin/sh
 # This script is Needed to Set Automatically Device Props.
 
-prjName=$(cat /proc/oppoVersion/prjVersion)
+prjName=$(cat /proc/oplusVersion/prjVersion)
 echo $prjName
 
 case $prjName in
