@@ -10,15 +10,7 @@ system /system ext4 ro wait,,avb=vbmeta_system,logical,first_stage_mount,avb_key
 vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount
 product /product ext4 ro wait,,avb,logical,first_stage_mount
 
-my_odm /odm ext4 ro wait,logical,first_stage_mount,nofail
-my_product /my_product ext4 ro wait,logical,first_stage_mount,nofail
-my_engineering /my_engineering ext4 ro wait,logical,first_stage_mount,nofail
-my_company.netease /my_company ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
-my_carrier.vdf /my_carrier ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
-my_region.japan /my_region ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
-my_heytap.x /my_heytap ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
-my_stock.x /my_stock ext4 ro,barrier=1 wait,logical,first_stage_mount,nofail
-my_preload.x /my_preload ext4 ro wait,logical,first_stage_mount,nofail
+
 
 /dev/block/by-name/cdt_engineering /cdt_engineering emmc defaults defaults
 /dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults first_stage_mount,nofail,
