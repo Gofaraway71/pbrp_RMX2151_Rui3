@@ -11,7 +11,7 @@ on:
 env:
   MANIFEST: https://github.com/PitchBlackRecoveryProject/manifest_pb
   MANIFEST_BRANCH: android-11.0
-  DEVICE: RMX2001
+  DEVICE: RMX2151
   DT_LINK: https://github.com/Gofaraway71/PBRP_RMX2151
   DT_PATH: device/realme/RMX2151
   TARGET: recoveryimage
