@@ -28,7 +28,7 @@ jobs:
       run: |
        # Workaround to provide additional free space for testing.
         #   https://github.com/actions/virtual-environments/issues/2840
-        #curl https://raw.githubusercontent.com/snjy4/TWRP_BUILD/main/cleanup.sh | bash
+        curl https://raw.githubusercontent.com/snjy4/TWRP_BUILD/main/cleanup.sh | bash
         sudo rm -rf /usr/share/dotnet
         sudo rm -rf /opt/ghc
         sudo rm -rf "/usr/local/share/boost"
