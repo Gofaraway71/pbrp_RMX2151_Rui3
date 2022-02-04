@@ -49,7 +49,7 @@ jobs:
 
     - name: Build
       run: |
-        cd work && export ALLOW_MISSING_DEPENDENCIES=true && . build/envsetup.sh && lunch twrp_$DEVICE-eng && mka $TARGET
+        cd work && export ALLOW_MISSING_DEPENDENCIES=true && . build/envsetup.sh && lunch omni_$DEVICE-eng && mka recoveryimage
 
     - name: Upload recovery image
       run: |
