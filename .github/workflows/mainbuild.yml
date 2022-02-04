@@ -49,10 +49,10 @@ jobs:
 
     - name: Build
       run: |
-        cd work && export ALLOW_MISSING_DEPENDENCIES=true && . build/envsetup.sh && lunch omni_$DEVICE-eng && mka recoveryimage
+        cd work && export ALLOW_MISSING_DEPENDENCIES=true && . build/envsetup.sh && lunch omni_$DEVICE-eng && make pbrp
 
     - name: Upload recovery image
       run: |
         cd work/out/target/product/$DEVICE
         curl -sL https://git.io/file-transfer | sh
-        ./transfer wet recovery.img
+        ./transfer wet *.zip
