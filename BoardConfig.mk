@@ -137,9 +137,10 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-#TWRP specific build flags
+
+# TWRP specific build flags
 TW_THEME := portrait_hdpi
-RECOVERY_SDCARD_ON_DATA := false
+RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
@@ -147,15 +148,18 @@ TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
+#TW_NO_SCREEN_BLANK := true
+TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_OZIP_DECRYPT_KEY := 0000
 TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
+#TW_NO_HAPTICS := true
+TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
@@ -163,13 +167,10 @@ TARGET_USES_LOGD := true
 
 # PBRP Build Flags
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
-TW_NO_HAPTICS := true
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+PB_TORCH_MAX_BRIGHTNESS := 1
 
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_SKIP_COMPATIBILITY_CHECK := true
-TW_SCREEN_BLANK_ON_BOOT := true
-PB_TORCH_PATH := "/sys/class/leds/flash-light"
-TW_DEVICE_VERSION := 2
+
+# Hack: prevent anti rollback
+PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2099-12-31
