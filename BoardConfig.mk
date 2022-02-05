@@ -156,6 +156,7 @@ TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region 
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 
+
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
@@ -163,6 +164,11 @@ TARGET_USES_LOGD := true
 # PBRP Build Flags
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
 
-#PB Torch
-PB_TORCH_PATH := "/proc/qcom_flash"
-PB_TORCH_MAX_BRIGHTNESS := 1
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_SKIP_COMPATIBILITY_CHECK := true
+TW_SCREEN_BLANK_ON_BOOT := true
+PB_TORCH_PATH := "/sys/class/leds/flash-light"
+TW_DEVICE_VERSION := 2
