@@ -14,9 +14,6 @@ on:
 env:
   BUILD_RELEASE_TYPE: "TEST"
   CHANGELOG: ${{ github.event.inputs.ChangeLogs }}
-  BOT_API: ${{ secrets.BOT_API }}
-  GCF_AUTH_KEY: ${{ secrets.GCF_AUTH_KEY }}
-  GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
   GitHubMail: "aalbatron@gmail.com"
   GitHubName: "Gofaraway71"
   SFPassword: "albatron34000"
