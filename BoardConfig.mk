@@ -92,7 +92,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SUPER_PARTITION_SIZE := 6970933248
 BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_SIZE := 6970933248
-BOARD_MAIN_PARTITION_LIST := system vendor product
+BOARD_MAIN_PARTITION_LIST := system vendor
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -137,44 +137,40 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-# TWRP specific build flags
+#TWRP specific build flags
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
-TW_SCREEN_BLANK_ON_BOOT := true
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
-TW_USE_TOOLBOX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_SCREEN_BLANK_ON_BOOT := true
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
-TW_SUPPORT_INPUT_1_2_HAPTICS := true
 TW_OZIP_DECRYPT_KEY := 0000
-TW_Y_OFFSET := 110
-TW_H_OFFSET := -110
-TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
-
-# Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2099-12-31
+TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_LIBRESETPROP := true
 
-# Debug
+#Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
-# PBRP Build Flags
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
 
 PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
 PB_TORCH_MAX_BRIGHTNESS := 1
+
+TW_Y_OFFSET := 88
+TW_H_OFFSET := -88
+
+TW_SCREEN_BLANK_ON_BOOT := false
+TW_NO_SCREEN_BLANK := true
+PLATFORM_VERSION := 16.1.0
+TW_HAS_EDL_MODE := true
+TW_SUPPORT_INPUT_1_2_HAPTICS := true
+TW_NO_HAPTICS := true
