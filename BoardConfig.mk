@@ -133,46 +133,46 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
-# Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_HAS_LARGE_FILESYSTEM := true
 
-#TWRP specific build flags
+# TWRP specific build flags
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
+TW_USE_TOOLBOX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
+TW_SCREEN_BLANK_ON_BOOT := false
+TW_NO_SCREEN_BLANK := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TW_OZIP_DECRYPT_KEY := 0000
 TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
+TW_OZIP_DECRYPT_KEY := 0000
+TW_Y_OFFSET := 100
+TW_H_OFFSET := -100
+TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
+
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP := true
 
-#Debug
+# Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# PBRP Build Flags
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
-
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+PB_TORCH_PATH := "/proc/qcom_flash"
 PB_TORCH_MAX_BRIGHTNESS := 1
-
-TW_Y_OFFSET := 88
-TW_H_OFFSET := -88
-
-TW_SCREEN_BLANK_ON_BOOT := false
-TW_NO_SCREEN_BLANK := true
-PLATFORM_VERSION := 16.1.0
-TW_HAS_EDL_MODE := true
-TW_SUPPORT_INPUT_1_2_HAPTICS := true
-TW_NO_HAPTICS := true
