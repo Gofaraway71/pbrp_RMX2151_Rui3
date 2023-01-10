@@ -57,15 +57,15 @@
 /dev/fm                   0660   media     media
 
 # NFC
-/dev/msr3110              0666   root       root
-/dev/mt6605               0660   nfc        radio
 /dev/st21nfc              0660   nfc        radio
+/dev/st54spi              0660   secure_element        secure_element
 
 # MTK BTIF driver
 /dev/btif                 0600   system     system
 
 # Trusty driver
 /dev/trusty-ipc-dev0      0660   system     system
+/dev/nebula-ipc-dev0      0660   system     system
 
 # RPMB (for Trusty)
 /dev/block/mmcblk0rpmb    0660   root       system
@@ -108,20 +108,6 @@
 /dev/pvrsrvkm             0666   root       root
 /dev/pvr_sync             0666   root       root
 
-#ifdef VENDOR_EDIT
-#Qingwen.Liu@RM.BSP.Fingerprint.Basic. 2019/09/29, add for goodix device policy start
-/dev/goodix_fp            0666   system     system
-#Qingwen.Liu@RM.BSP.Fingerprint.Basic. 2019/09/29, add for goodix device policy end
-#endif VENDOR_EDIT
-
-#ifdef VENDOR_EDIT
-#Qingwen.Liu@RM.BSP.Fingerprint.Basic. 2019/09/29, add for fpc device policy start
-/sys/bus/platform/devices/fpc_interrupt clk_enable        0660 system system
-/sys/bus/platform/devices/fpc_interrupt irq               0660 system system
-/sys/bus/platform/devices/fpc_interrupt irq_enable        0660 system system
-/sys/bus/platform/devices/fpc_interrupt wakelock_enable   0660 system system
-#Qingwen.Liu@RM.BSP.Fingerprint.Basic. 2019/09/29, add for fpc device policy end
-#endif VENDOR_EDIT
 
 /sys/devices/platform/leds-mt65xx/leds/green   delay_on      0664  system   system
 /sys/devices/platform/leds-mt65xx/leds/green   delay_off      0664  system   system
@@ -155,8 +141,8 @@
 /dev/hotknot              0660   root       system
 
 #hang_detect
-/dev/RT_Monitor           0600   system     system
-/dev/kick_powerkey        0600   system     system
+/dev/RT_Monitor           0660   system     system
+/dev/kick_powerkey        0660   system     system
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
