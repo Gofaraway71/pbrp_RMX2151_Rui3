@@ -15,25 +15,7 @@
 #
 
 
-Gofaraway71
-/
-twrp-RMX2151-A12.1
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-twrp-RMX2151-A12.1/BoardConfig.mk
-@Gofaraway71
-Gofaraway71 Update BoardConfig.mk
- 1 contributor
-145 lines (120 sloc)  4.37 KB
-#
+
 # Copyright (C) 2022 The Android Open Source Project
 # Copyright (C) 2022 SebaUbuntu's TWRP device tree generator
 #
