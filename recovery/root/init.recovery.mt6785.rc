@@ -65,6 +65,25 @@ service vendor.vibrator-1-0 system/bin/android.hardware.vibrator@1.0-service
     disabled
     seclabel u:r:recovery:s0
   
+#Add for OPPO FBE
+service hal_cryptoeng_oppo /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.trustonic
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
 on property:hwservicemanager.ready=true
     start hal_cryptoeng_oppo
     start mobicore
@@ -74,29 +93,20 @@ on property:hwservicemanager.ready=true
 on property:ro.crypto.state=unsupported
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-
+    stop keymaster-4-0
+    stop gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-
+    stop keymaster-4-0
+    stop gatekeeper-1-0
 
 on property:twrp.decrypt.done=true
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
-
-#    
-on property:enable.fbe.service=0
-    stop hal_cryptoeng_oppo
-    stop mobicore
-    stop servicemanager
-    stop hwservicemanager
+    stop keymaster-4-0
+    stop gatekeeper-1-0
  
 
 on property:sys.usb.config=fastboot
