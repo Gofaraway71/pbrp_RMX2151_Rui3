@@ -1,4 +1,4 @@
-name: build
+name: build pbrp
 on:
   workflow_dispatch:
     inputs:
