@@ -35,7 +35,7 @@ on:
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'omni_RMX2151'
+        default: 'twrp_RMX2151'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
