@@ -11,6 +11,10 @@ on post-fs
 
     # Create mcRegistry to store failure record
     mkdir /mnt/vendor/persist/mcRegistry 0771 system system
+    mkdir /mnt/vendor/persist/paytrigger
+    chown system system /mnt/vendor/persist/paytrigger
+    chmod 0777 /mnt/vendor/persist/paytrigger
+
 
 on post-fs-data
     # Create /data/vendor/key_provisioning dir and get proper encryption policy installed
