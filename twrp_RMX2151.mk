@@ -36,3 +36,7 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme 7
 PRODUCT_MANUFACTURER := realme
 
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
+
