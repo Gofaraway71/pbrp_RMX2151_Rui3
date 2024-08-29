@@ -1,9 +1,24 @@
+# Brand
+Build.BRAND=MTK
+
+# Additional System Properties
+ro.mediatek.platform=MT6785
+ro.hardware=mt6785
+ro.product.device=RMX2151L1
+
+# USB
 ro.secure=0
 ro.adb.secure=0
 ro.debuggable=1
-ro.sf.lcd_density=440
-persist.sys.isUsbOtgEnabled=true
+ro.sys.usb.bicr=yes
+ro.sys.usb.charging.only=yes
 ro.sys.usb.mtp.whql.enable=0
-ro.sys.usb.storage.type=mtp
-ro.mediatek.platform=MT6785
-ro.hardware=mt6785
+ro.sys.usb.storage.type=mtp,mass_storage
+persist.sys.isUsbOtgEnabled=true
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+persist.adb.nonblocking_ffs=0
+setprop persist.service.adb.enable 1
+setprop persist.service.debuggable 1
+setprop persist.sys.usb.config mtp,adb
